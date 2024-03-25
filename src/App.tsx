@@ -1,11 +1,16 @@
-import { Title } from "./appStyled";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/homePage";
+import NotFoundPage from "./pages/notFound";
 
-function App() {
+const App = () => {
 	return (
-		<>
-      <Title>This is the home page</Title>
-		</>
+		<Router>
+			<Routes>
+				<Route path="/" element={<HomePage />} />
+				<Route path="*" element={<NotFoundPage />} />
+			</Routes>
+		</Router>
 	);
-}
+};
 
 export default App;
